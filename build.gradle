@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClassName = 'helm_operator.ControllerMain'
+}
+
+group 'helm_operator'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // implementation 'com.sparkjava:spark-core:2.9.3'
+    implementation 'io.fabric8:kubernetes-client:4.13.0'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation 'io.prometheus:simpleclient:0.9.0'
+}

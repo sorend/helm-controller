@@ -1,0 +1,22 @@
+# podinfo.yaml
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: default
+  labels:
+    whatever: test
+spec:
+  helmVersion: v2
+  releaseName: pod-info
+  chart:
+    repository: https://stefanprodan.github.io/podinfo
+    name: podinfo
+    version: 3.2.0
+  values:
+    hello: "world"
+    soren: "stuff"
+    whatever:
+    - 1
+    - 2
